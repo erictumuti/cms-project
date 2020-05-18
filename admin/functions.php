@@ -58,19 +58,18 @@ function confirmQuery($result) {
 					
 					echo "<h6 text-color='red'>This field should not be empty</h6>";
 					
-				}
-					$query = "INSERT INTO categories(cat_title)";
-					$query .="VALUE('{$cat_title}')";
+				} else {
 					
-					$create_category_query = mysqli_query($connection, $query);
 					
-					if(!$create_category_query) {
-						die("Query Failed" . mysqli_error($connection));
-				}
-			}  
-			  
 
-
+$stmt = mysqli_prepare($connection,"INSERT INTO categories(cat_title) VALUES(?)");
+mysqli_stmt_bind_param($stmt, 's' ,$cat_title);
+mysqli_stmt_execute($stmt);					
+		if(!$stmt) {
+			die("Query Failed" . mysqli_error($connection));
+	}
+	}  
+	}
 }
 function findAllCategories() {
 	
@@ -88,8 +87,8 @@ echo "<tr>";
 	 
 echo "<td>{$cat_id}</td>";
 echo "<td>{$cat_title}</td>";
-echo "<td><a href='categories.php?delete=$cat_id'>Delete</a></td>";
-echo "<td><a href='categories.php?edit=$cat_id'>Edit</a></td>";
+echo "<td><a class='btn btn-danger' href='categories.php?delete=$cat_id'>Delete</a></td>";
+echo "<td><a class='btn btn-primary' href='categories.php?edit=$cat_id'>Edit</a></td>";
 	 
 echo "<tr>";
 	

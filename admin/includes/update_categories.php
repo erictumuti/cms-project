@@ -5,6 +5,8 @@
 if(isset($_GET['edit'])) {
 	$cat_id = $_GET['edit'];
 	
+	
+$stmt = mysqli_prepare($connection,"INSERT INTO categories(cat_title) VALUES(?)");	
 $query = " SELECT * FROM categories WHERE cat_id = $cat_id ";
 $select_categories_id = mysqli_query($connection, $query);
 								
@@ -23,12 +25,17 @@ $cat_title = $row['cat_title'];
 if(isset($_POST['update_category'])) {
 $the_cat_title = $_POST['cat_title'];
 	
-$query = "UPDATE categories SET cat_title = '{$the_cat_title}' WHERE cat_id = {$cat_id}";
-$update_query = mysqli_query($connection, $query);
-	//header("Location: categories.php");
-	if(!$update_query) {
+$stmt = mysqli_prepare($connection,"UPDATE categories SET cat_title = ? WHERE cat_id = ? ");
+mysqli_stmt_bind_param($stmt, 'si' ,$the_cat_title,$cat_id);
+mysqli_stmt_execute($stmt);	
+	
+	if(!$stmt) {
 		die("query failed" . mysqli_error($connection));
 	} 
+	
+	
+	mysqli_stmt_close($stmt);
+	header("Location: categories.php");
 }					
 			
 			
