@@ -1,29 +1,41 @@
 <?php
-include("delete_modal.php");
-
 if(isset($_POST['checkBoxArray'])) {
 
-  foreach($_POST['checkBoxArray'] as $postValueId){
+  foreach($_POST['checkBoxArray'] as $postValueId ){
 		 
 $bulk_options = $_POST['bulk_options']; 
 	
 		 switch($bulk_options) {
 				 
-		case 'published':
-$query = "UPDATE posts SET post_status = {$bulk_options} WHERE post_id = {$postValueId}";
+             case 'published':
+$query = "UPDATE posts SET post_status = '{$bulk_options}' WHERE post_id = {$postValueId}";
 $update_to_published_status = mysqli_query($connection, $query);
-				 confirmQuery($update_to_published_status);
+ confirmQuery($update_to_published_status);
 				 break;
+                 
+             case 'draft':
+$query = "UPDATE posts SET post_status = '{$bulk_options}' WHERE post_id = {$postValueId}";
+$update_to_draft_status = mysqli_query($connection, $query);
+ confirmQuery($update_to_draft_status);
+				 break; 
+                 
+             case 'delete':
+$query = "DELETE FROM posts WHERE post_id = {$postValueId}";
+$update_to_delete_status = mysqli_query($connection, $query);
+ confirmQuery($update_to_delete_status);
+				 break;                 
 }
-
 }
 } 
 
 ?>	
         <form action="" method="post">	
+        
 		<table class="table table-bordered table-hover">
-		<div id="bulkOptionContainer" class="col-xs-3">
-		<select form="form-control" name="bulk_options" id="">
+		
+		<div id="bulkOptionContainer" class="col-xs-4">
+		
+		<select class="form-control" name="bulk_options" id="">
 		<option value="">Select Options</option>
 		<option value="published">Publish</option>
 		<option value="draft">Draft</option>
@@ -32,10 +44,9 @@ $update_to_published_status = mysqli_query($connection, $query);
 		</div>
 		<div class="col-xs-4">
      	<input type="submit" name="submit" class="btn btn-success" value="Apply">
-     	<a class="btn btn-primary" href="posts.php?source=add_post">Add New</a>
+     	<a class="btn btn-primary" href="add_post.php">Add New</a>
         </div>
-		<br>
-		<br>
+
 		<thead>
 		<tr>
 		<th><input id="SelectAllBoxes" type="checkbox"></th>
@@ -79,7 +90,7 @@ $post_views_count = $row['post_views_count'];
 	
 echo "<tr>";
 	?>
-<td><input class="checkBoxes" type="checkbox" name="checkBoxArray[]" value="<?php echo $post_id; ?>"></td>;	
+<td><input class="checkBoxes" type="checkbox" name="checkBoxArray[]" value="<?php echo $post_id; ?>"></td>
 	
 	<?php		
 	

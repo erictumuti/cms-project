@@ -1,4 +1,5 @@
 <!-- Modal HTML -->
+
 <div id="myModal" class="modal fade">
 	<div class="modal-dialog modal-confirm">
 		<div class="modal-content">

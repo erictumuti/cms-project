@@ -1,15 +1,9 @@
 <?php
-
-function escape($string){
+ function escape($string){
 	global $connection;
 	return mysqli_real_escape_string($connection,trim($string));
 	
 }
-
-?>
-
-
-<?php
 function users_online(){
 	
 	global $connection;
@@ -225,15 +219,5 @@ while($row = mysqli_fetch_array($select_user_query)) {
 		
 	
 }
-
-
-
-
-
-
-
-
-
-
 
 ?>
