@@ -44,7 +44,7 @@ $update_to_delete_status = mysqli_query($connection, $query);
 		</div>
 		<div class="col-xs-4">
      	<input type="submit" name="submit" class="btn btn-success" value="Apply">
-     	<a class="btn btn-primary" href="add_post.php">Add New</a>
+     	<a class="btn btn-primary" href="posts.php?source=add_post">Add New</a>
         </div>
 
 		<thead>
@@ -126,7 +126,7 @@ $cat_title = $row['cat_title'];
 $query = "SELECT * FROM comments WHERE comment_post_id = $post_id";	
 $send_comment_query = mysqli_query($connection,$query);
 $row = mysqli_fetch_array($send_comment_query);
-	$comment_id = $row['comment_id'];
+//$comment_id = $row['comment_id'];
 $count_comments = mysqli_num_rows($send_comment_query);	
 	
 	echo "<td><a href='post_comments.php?id=$post_id'>{$count_comments}</a></td>";

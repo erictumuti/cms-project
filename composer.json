@@ -1,0 +1,13 @@
+{
+    "name": "25474/cms",
+    "require": {
+        "phpmailer/phpmailer": "^6.1",
+        "pusher/pusher-php-server": "^4.1"
+    },
+    "authors": [
+        {
+            "name": "eric tumuti",
+            "email": "erictumuti114@gmail.com"
+        }
+    ]
+}

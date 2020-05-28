@@ -50,7 +50,7 @@ $cat_id = $row['cat_id'];
                    <li>
                    	<a href="admin">Admin</a>
                    </li>
-                     <li>
+                    <li>
                    	<a href="/cms/login.php">Login</a>
                    </li>
                      <li class='<?php echo $registration_class; ?>'>
