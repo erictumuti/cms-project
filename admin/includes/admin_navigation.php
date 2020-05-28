@@ -13,7 +13,7 @@
             <ul class="nav navbar-right top-nav">
                 <li><a href="">Users Online: <?php echo users_online(); ?></a></li>
               <!--  <li><a href="">Users Online: <span class="usersonline"></span></a></li>-->
-				<li><a href="../index.php">HOME</a></li>
+				<li><a href="../index">HOME</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>
                     
@@ -41,41 +41,41 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
-                        <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                        <a href="index"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                      <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#posts"><i class="fa fa-fw fa-arrows-v"></i> Posts <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="posts" class="collapse">
                             <li>
-                                <a href="./posts.php">View All Posts</a>
+                                <a href="./posts">View All Posts</a>
                             </li>
                             <li>
-                                <a href="posts.php?source=add_post">Add Post</a>
+                                <a href="posts?source=add_post">Add Post</a>
                             </li>
                         </ul>
                     </li>
                   
                     <li>
-                        <a href="categories.php"><i class="fa fa-fw fa-bar-chart-o"></i> Categories</a>
+                        <a href="categories"><i class="fa fa-fw fa-bar-chart-o"></i> Categories</a>
                     </li>
                     
                     <li>
-                        <a href="comments.php"><i class="fa fa-fw fa-table"></i> Comments</a>
+                        <a href="comments"><i class="fa fa-fw fa-table"></i> Comments</a>
                     </li>
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Users <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>
-                                <a href="users.php">View All Users</a>
+                                <a href="users">View All Users</a>
                             </li>
                             <li>
-                                <a href="users.php?source=add_user">Add User</a>
+                                <a href="users?source=add_user">Add User</a>
                             </li>
                         </ul>
                     </li>
                   
                     <li>
-                        <a href="profile.php"><i class="fa fa-fw fa-desktop"></i> Profile</a>
+                        <a href="profile"><i class="fa fa-fw fa-desktop"></i> Profile</a>
                     </li>
                     
                 </ul>

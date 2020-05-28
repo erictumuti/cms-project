@@ -56,7 +56,7 @@
                     </div>
                 </div>
             </div>
-            <a href="posts.php">
+            <a href="posts">
                 <div class="panel-footer">
                     <span class="pull-left">View Details</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -87,7 +87,7 @@
                     </div>
                 </div>
             </div>
-            <a href="comments.php">
+            <a href="comments">
                 <div class="panel-footer">
                     <span class="pull-left">View Details</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -118,7 +118,7 @@
                     </div>
                 </div>
             </div>
-            <a href="users.php">
+            <a href="users">
                 <div class="panel-footer">
                     <span class="pull-left">View Details</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -149,7 +149,7 @@
                     </div>
                 </div>
             </div>
-            <a href="categories.php">
+            <a href="categories">
                 <div class="panel-footer">
                     <span class="pull-left">View Details</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

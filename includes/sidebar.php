@@ -23,7 +23,7 @@
 
 <h4>Logged in as <?php echo $_SESSION['username'] ?></h4>
 
-<a href="includes/logout.php" class="btn btn-primary">Logout</a>
+<a href="includes/logout" class="btn btn-primary">Logout</a>
 
 <?php else: ?>
 			<h4>Login</h4>
@@ -38,7 +38,7 @@
 			</span>
 			</div>
 			<div class="form-group">
-			    <a href="forgot.php?forgot=<?php echo uniqid(true); ?>">Forgot Password</a>
+			    <a href="forgot?forgot=<?php echo uniqid(true); ?>">Forgot Password</a>
 			</div>
 			</form>
 <?php endif; ?>
@@ -65,7 +65,7 @@ $select_categories_sidebar = mysqli_query($connection, $query);
  while($row = mysqli_fetch_assoc($select_categories_sidebar)){
 $cat_title = $row['cat_title'];
 $cat_id = $row['cat_id'];	 
-echo "<li><a href='category.php?category=$cat_id'>{$cat_title}</a></li>";
+echo "<li><a href='category/$cat_id'>{$cat_title}</a></li>";
 	
 }
 ?>								

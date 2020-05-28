@@ -1,6 +1,6 @@
    <?php
 if(isset($_GET['p_id'])){
-$the_post_id = $_GET['p_id'];	
+$the_post_id = escape($_GET['p_id']);	
 	
 }
 
@@ -51,7 +51,7 @@ confirmQuery($update_post);
 $the_post_id = mysqli_insert_id($connection);	
 	//if(!$update_post){
 		//die("query failed" . mysqli_error($connection)); }
-echo "<p class='bg-success'>Post Updated: " . " " . "<a href='../post.php?p_id={$the_post_id}'>View Post</a>  or  <a href='posts.php'>Edit More Posts</a></p>";	
+echo "<p class='bg-success'>Post Updated: " . " " . "<a href='../post?p_id={$the_post_id}'>View Post</a>  or  <a href='posts'>Edit More Posts</a></p>";	
 }
 
 ?>   

@@ -146,7 +146,8 @@ require 'config.php';
                             <?php else: ?>
 
 
-                                <h2>Please check your email</h2>
+                                <h2>Reset your email in mailtrap</h2>
+                                <a href="https://mailtrap.io/">Sign up for an account</a> 
 
 
                             <?php endif; ?>

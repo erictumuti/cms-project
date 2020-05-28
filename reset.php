@@ -4,7 +4,7 @@
 <?php 
 
 if(!isset($_GET['email']) && !isset($_GET['token'])) {
-    header("Location: index.php");
+    header("Location: index");
 }
 
 
@@ -34,7 +34,7 @@ if($stmt = mysqli_prepare($connection,'SELECT username,user_email, token FROM us
         mysqli_stmt_execute($stmt);
         if(mysqli_stmt_affected_rows($stmt) >=1) {
             
-          header("Location: index.php");  
+          header("Location: index");  
         }
         
         mysqli_stmt_close($stmt);

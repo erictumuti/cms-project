@@ -69,19 +69,19 @@ $post_status = $row['post_status'];
 
                 <!-- First Blog Post -->
  <h2>
-<a href="post.php?p_id=<?php echo $post_id; ?>"><?php echo $post_title; ?></a>
+<a href="post/<?php echo $post_id; ?>"><?php echo $post_title; ?></a>
 </h2>
 <p class="lead">
-<a href="author_posts.php?author=<?php echo $post_user; ?>&p_id=<?php echo $post_id; ?>"><?php echo $post_user; ?></a>
+<a href="author_posts?author=<?php echo $post_user; ?>&p_id=<?php echo $post_id; ?>"><?php echo $post_user; ?></a>
 </p>
 <p><span class="glyphicon glyphicon-time"></span><?php echo $post_date; ?></p>
 <hr>
-<a href="post.php?p_id=<?php echo $post_id; ?>">
+<a href="post?p_id=<?php echo $post_id; ?>">
 <img class="img-responsive" src="images/<?php echo $post_image; ?>" alt="image">
 </a>
 <hr>
 <p><?php echo $post_content; ?></p>
-<a class="btn btn-primary" href="post.php?p_id=<?php echo $post_id; ?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+<a class="btn btn-primary" href="post?p_id=<?php echo $post_id; ?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
                 <hr>
 	
@@ -107,12 +107,12 @@ $post_status = $row['post_status'];
 		
 		if($i == $page){
 			
-echo "<li><a class='active_link' href='index.php?page={$i}'>{$i}</a></li>";
+echo "<li><a class='active_link' href='index?page={$i}'>{$i}</a></li>";
 			
 			
 }else {
 		
-		echo "<li><a href='index.php?page={$i}'>{$i}</a></li>";
+		echo "<li><a href='index?page={$i}'>{$i}</a></li>";
 	}	
 			
 	}
